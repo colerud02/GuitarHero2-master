@@ -1,5 +1,5 @@
 package GH;
-//THIS IS THE ONE!!!!
+
 
 import Game.Game;
 import Graphics.GameFrame;
@@ -11,7 +11,7 @@ public class Main
 	Game g;
 public static void main(String[] args)
 {
-	buttons b = new buttons();
+	buttons b = new buttons(buttons.BLUE);
 	b.loadUp();
 	Main m = new Main();
 	m.init();

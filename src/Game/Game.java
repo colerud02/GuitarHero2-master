@@ -2,10 +2,26 @@ package Game;
 
 
 import java.awt.Graphics;
+import java.util.ArrayList;
+
+import Graphics.buttons;
 
 public class Game implements Runnable {
 	int x = 0, y= 0;
+	private ArrayList<buttons> buttonslist = new ArrayList<buttons>();
+	public Game()
+	{
+		buttonslist.add(new buttons(buttons.BLUE));
+		buttonslist.add(new buttons(buttons.GREEN));
+		buttonslist.add(new buttons(buttons.RED));
+		buttonslist.add(new buttons(buttons.YELLOW));
 
+
+	}
+		public ArrayList<buttons> getButtons()
+		{
+			return buttonslist;
+		}
 	@Override
 	public void run() 
 	{
