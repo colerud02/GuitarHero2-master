@@ -30,8 +30,12 @@ public class Game implements Runnable {
 			
 			x++;
 			y++;
+			for(int i = 0; i < buttonslist.size(); i++)
+			{
+				buttonslist.get(i).tick();
+			}
 			try {
-				Thread.sleep(2000);
+				Thread.sleep(50);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

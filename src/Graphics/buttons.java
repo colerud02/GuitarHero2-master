@@ -26,24 +26,7 @@ private int type;
 
 public buttons(int type)
 {
-	/*
-	 * 	double redx = 430;
-		double redy = 200;
-		double greenx = 470;
-		double greeny = 200;
-		double yellowx = 480;
-		double yellowy = 200;
-		double bluex = 500;
-		double bluey = 200;
-		
-			2redy += .7;
-			redx -= .37;
-			1greeny += .7;
-			greenx -= .20;
-			3yellowy += .7;
-			4bluey += .7;
-			bluex += .2;
-	 */
+	
 	this.type=type;
 	//blue
 	if(type == 1)
@@ -74,6 +57,46 @@ public buttons(int type)
 public void draw(Graphics g)
 {
 	g.drawImage(image,(int)x,(int)y,40,40,null);
+}
+public void tick()
+{
+	/*
+	 * 	double redx = 430;
+		double redy = 200;
+		double greenx = 470;
+		double greeny = 200;
+		double yellowx = 480;
+		double yellowy = 200;
+		double bluex = 500;
+		double bluey = 200;
+		
+			2redy += .7;
+			redx -= .37;
+			1greeny += .7;
+			greenx -= .20;
+			3yellowy += .7;
+			4bluey += .7;
+			bluex += .2;
+	 */
+	switch(type)
+	{
+	case BLUE:
+		x+=.4;
+		y+=1.4;
+		break;
+	case YELLOW:
+		y+=1.4;
+		x-= .37;
+		break;
+	case GREEN:
+		y+=1.4;
+		x-=.47;
+		break;
+	case RED:
+		y+=1.4;
+		
+		break;
+	}
 }
 public void loadUp()
 {
