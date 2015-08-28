@@ -30,7 +30,6 @@ public class GameFrame extends JFrame implements Runnable,KeyListener {
 		
 	}
 	
-	@Override
 	public void run() 
 	{
 		while(true)
