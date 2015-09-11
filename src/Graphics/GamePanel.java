@@ -54,7 +54,7 @@ public class GamePanel extends JPanel {
 		bluey += .7;
 		bluex += .2;
 		g2.drawImage(image, 0, 0, 1000, 500, null);
-		ArrayList<buttons> temp = g.getButtons();
+		ArrayList<Buttons> temp = g.getButtons();
 		for(int i = 0; i < temp.size(); i++)
 		{
 			temp.get(i).draw(g2);

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import javax.swing.Timer;
 
-import Graphics.buttons;
+import Graphics.Buttons;
 
 public class Game implements Runnable, ActionListener {
 	int x = 0, y = 0;
@@ -17,17 +17,17 @@ public class Game implements Runnable, ActionListener {
 	Boolean yellowUsed = false;
 	Boolean blueUsed = false;
 	Timer time = new Timer(1000, this);
-	private ArrayList<buttons> buttonslist = new ArrayList<buttons>();
+	private ArrayList<Buttons> buttonslist = new ArrayList<Buttons>();
 
 	public Game() {
-		buttonslist.add(new buttons(buttons.BLUE));
-		buttonslist.add(new buttons(buttons.GREEN));
-		buttonslist.add(new buttons(buttons.RED));
-		buttonslist.add(new buttons(buttons.YELLOW));
+		buttonslist.add(new Buttons(Buttons.BLUE));
+		buttonslist.add(new Buttons(Buttons.GREEN));
+		buttonslist.add(new Buttons(Buttons.RED));
+		buttonslist.add(new Buttons(Buttons.YELLOW));
 
 	}
 
-	public ArrayList<buttons> getButtons() {
+	public ArrayList<Buttons> getButtons() {
 		return buttonslist;
 	}
 
@@ -35,24 +35,24 @@ public class Game implements Runnable, ActionListener {
 		time.start();
 		while (true) {
 			if (timeCount == 1 && greenUsed == false) {
-				buttonslist.add(new buttons(buttons.GREEN));
+				buttonslist.add(new Buttons(Buttons.GREEN));
 				greenUsed = true;
 				blueUsed = false;
 			}
 			if (timeCount == 2 && redUsed == false) {
 				greenUsed = false;
-				buttonslist.add(new buttons(buttons.YELLOW));
+				buttonslist.add(new Buttons(Buttons.RED));
 				redUsed = true;
 			}
 			if (timeCount == 3 && yellowUsed == false) {
 				redUsed = false;
-				buttonslist.add(new buttons(buttons.RED));
-				
+				buttonslist.add(new Buttons(Buttons.YELLOW));
+
 				yellowUsed = true;
 			}
 			if (timeCount == 4 && blueUsed == false) {
 				yellowUsed = false;
-				buttonslist.add(new buttons(buttons.BLUE));
+				buttonslist.add(new Buttons(Buttons.BLUE));
 				timeCount = 0;
 				blueUsed = true;
 			}
@@ -61,6 +61,7 @@ public class Game implements Runnable, ActionListener {
 			for (int i = 0; i < buttonslist.size(); i++) {
 				buttonslist.get(i).tick();
 			}
+			clearButtons();
 			try {
 				Thread.sleep(50);
 			} catch (InterruptedException e) {
@@ -72,6 +73,17 @@ public class Game implements Runnable, ActionListener {
 
 	public void draw(Graphics g) {
 
+	}
+
+	public void clearButtons() {
+		for(int i=buttonslist.size()-1; i>=0; i--)
+		{
+			Buttons removed = buttonslist.get(i);
+			if (removed.getY()>550) {
+				buttonslist.remove(i);
+			}
+		}
+		
 	}
 
 	@Override

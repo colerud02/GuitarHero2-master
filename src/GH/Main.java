@@ -2,14 +2,14 @@ package GH;
 
 import Game.Game;
 import Graphics.GameFrame;
-import Graphics.buttons;
+import Graphics.Buttons;
 
 public class Main {
 	GameFrame gf;
 	Game g;
 
 	public static void main(String[] args) {
-		buttons b = new buttons(buttons.BLUE);
+		Buttons b = new Buttons(Buttons.BLUE);
 		b.loadUp();
 		Main m = new Main();
 		m.init();

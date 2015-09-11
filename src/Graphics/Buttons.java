@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class buttons {
+public class Buttons {
 	double x = 0;
 	double y = 200;
 
@@ -18,12 +18,12 @@ public class buttons {
 
 	public static final int BLUE = 1;
 	public static final int GREEN = 2;
-	public static final int RED = 3;
-	public static final int YELLOW = 4;
+	public static final int YELLOW = 3;
+	public static final int RED = 4;
 
 	private int type;
 
-	public buttons(int type) {
+	public Buttons(int type) {
 
 		this.type = type;
 		// blue
@@ -67,7 +67,7 @@ public class buttons {
 			x += .4 * 2;
 			y += 1.4 * 2;
 			break;
-		case YELLOW:
+		case RED:
 			y += 1.4 * 2;
 			x -= .37 * 2;
 			break;
@@ -75,7 +75,7 @@ public class buttons {
 			y += 1.4 * 2;
 			x -= .47 * 2;
 			break;
-		case RED:
+		case YELLOW:
 			y += 1.4 * 2;
 
 			break;
@@ -87,8 +87,13 @@ public class buttons {
 
 	}
 
-	public double gety() {
+	public double getY() {
 		return y;
+
+	}
+
+	public int getColor() {
+		return type;
 
 	}
 
