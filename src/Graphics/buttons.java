@@ -64,22 +64,32 @@ public class buttons {
 		 */
 		switch (type) {
 		case BLUE:
-			x += .4*2;
-			y += 1.4*2;
+			x += .4 * 2;
+			y += 1.4 * 2;
 			break;
 		case YELLOW:
-			y += 1.4*2;
-			x -= .37*2;
+			y += 1.4 * 2;
+			x -= .37 * 2;
 			break;
 		case GREEN:
-			y += 1.4*2;
-			x -= .47*2;
+			y += 1.4 * 2;
+			x -= .47 * 2;
 			break;
 		case RED:
-			y += 1.4*2;
+			y += 1.4 * 2;
 
 			break;
 		}
+	}
+
+	public double getX() {
+		return x;
+
+	}
+
+	public double gety() {
+		return y;
+
 	}
 
 	public void loadUp() {

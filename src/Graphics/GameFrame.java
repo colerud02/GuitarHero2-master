@@ -3,6 +3,7 @@ package Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
@@ -11,6 +12,7 @@ import Game.Game;
 public class GameFrame extends JFrame implements Runnable,KeyListener {
 	Game g;
 	GamePanel gp;
+	
 	public GameFrame(Game g) 
 	{
 		super();
@@ -42,8 +44,13 @@ public class GameFrame extends JFrame implements Runnable,KeyListener {
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println(e.getKeyChar());
-		System.out.println(gp.getgreeny());
+		
+		char key = e.getKeyChar();
+		
+	if(key=='q'){
+		ArrayList<buttons> q = g.getButtons();
+	}
+		
 	}
 
 	@Override
