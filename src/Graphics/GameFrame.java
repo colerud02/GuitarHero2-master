@@ -12,7 +12,7 @@ import Game.Game;
 public class GameFrame extends JFrame implements Runnable, KeyListener {
 	Game g;
 	GamePanel gp;
-
+	int Score = 0;
 	public GameFrame(Game g) {
 		super();
 		this.g = g;
@@ -28,7 +28,7 @@ public class GameFrame extends JFrame implements Runnable, KeyListener {
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.addKeyListener(this);
-
+		this.setTitle("Score = " + Score);
 	}
 
 	public void run() {
@@ -57,6 +57,16 @@ public class GameFrame extends JFrame implements Runnable, KeyListener {
 				}
 			}
 			System.out.println("" + check);
+			if (check == true) {
+				Score += 5;
+				System.out.println("Score = " + Score);
+				this.setTitle("Score = " + Score);
+			}
+			if (check == false) {
+				Score -= 3;
+				System.out.println("Score = " + Score);
+				this.setTitle("Score = " + Score);
+			}
 		}
 		else if (key == 'w') {
 			ArrayList<Buttons> w = g.getButtons();
@@ -71,6 +81,16 @@ public class GameFrame extends JFrame implements Runnable, KeyListener {
 				}
 			}
 			System.out.println("" + check);
+			if (check == true) {
+				Score += 5;
+				System.out.println("Score = " + Score);
+				this.setTitle("Score = " + Score);
+			}
+			if (check == false) {
+				Score -= 3;
+				System.out.println("Score = " + Score);
+				this.setTitle("Score = " + Score);
+			}
 		}
 		else if (key == 'e') {
 			ArrayList<Buttons> e = g.getButtons();
@@ -85,6 +105,16 @@ public class GameFrame extends JFrame implements Runnable, KeyListener {
 				}
 			}
 			System.out.println("" + check);
+			if (check == true) {
+				Score += 5;
+				System.out.println("Score = " + Score);
+				this.setTitle("Score = " + Score);
+			}
+			if (check == false) {
+				Score -= 3;
+				System.out.println("Score = " + Score);
+				this.setTitle("Score = " + Score);
+			}
 		}
 		else if (key == 'r') {
 			ArrayList<Buttons> r = g.getButtons();
@@ -99,7 +129,18 @@ public class GameFrame extends JFrame implements Runnable, KeyListener {
 				}
 			}
 			System.out.println("" + check);
+			if (check == true) {
+				Score += 5;
+				System.out.println("Score = " + Score);
+				this.setTitle("Score = " + Score);
+			}
+			if (check == false) {
+				Score -= 3;
+				System.out.println("Score = " + Score);
+				this.setTitle("Score = " + Score);
+			}		
 		}
+		
 	}
 
 	@Override

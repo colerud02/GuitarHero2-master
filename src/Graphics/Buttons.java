@@ -1,10 +1,12 @@
 package Graphics;
 
+import java.applet.AudioClip;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.JApplet;
 
 public class Buttons {
 	double x = 0;
@@ -107,6 +109,7 @@ public class Buttons {
 					"Yellow Button.jpg"));
 			image4 = ImageIO.read(this.getClass()
 					.getResource("Blue Button.jpg"));
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
