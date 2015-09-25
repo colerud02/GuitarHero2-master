@@ -47,7 +47,6 @@ public class Game implements Runnable, ActionListener {
 			if (timeCount == 3 && yellowUsed == false) {
 				redUsed = false;
 				buttonslist.add(new Buttons(Buttons.YELLOW));
-
 				yellowUsed = true;
 			}
 			if (timeCount == 4 && blueUsed == false) {
