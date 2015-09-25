@@ -1,18 +1,21 @@
 package Graphics;
 
+import java.applet.AudioClip;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.swing.JApplet;
 import javax.swing.JFrame;
 
 import Game.Game;
 
-public class GameFrame extends JFrame implements Runnable, KeyListener {
+public class GameFrame extends JFrame implements Runnable, KeyListener  {
 	Game g;
 	GamePanel gp;
 	int Score = 0;
+	AudioClip sound1 = JApplet.newAudioClip(getClass().getResource("16604__phylum-sinter__various-buzz-killer.wav"));
 	public GameFrame(Game g) {
 		super();
 		this.g = g;
@@ -37,14 +40,16 @@ public class GameFrame extends JFrame implements Runnable, KeyListener {
 			gp.repaint();
 		}
 	}
+	
 
 	@Override
 	public void keyTyped(KeyEvent event) {
 		// TODO Auto-generated method stub
 
 		char key = event.getKeyChar();
+	
 
-		if (key == 'q') {
+		if (key == 'q' ) {
 			ArrayList<Buttons> q = g.getButtons();
 			boolean check = false;
 			for (Buttons green : q) {
@@ -56,16 +61,17 @@ public class GameFrame extends JFrame implements Runnable, KeyListener {
 					}
 				}
 			}
-			System.out.println("" + check);
 			if (check == true) {
 				Score += 5;
 				System.out.println("Score = " + Score);
 				this.setTitle("Score = " + Score);
+				System.out.println("" + check);
 			}
 			if (check == false) {
 				Score -= 3;
 				System.out.println("Score = " + Score);
 				this.setTitle("Score = " + Score);
+				sound1.play();
 			}
 		}
 		else if (key == 'w') {
@@ -90,6 +96,7 @@ public class GameFrame extends JFrame implements Runnable, KeyListener {
 				Score -= 3;
 				System.out.println("Score = " + Score);
 				this.setTitle("Score = " + Score);
+				sound1.play();
 			}
 		}
 		else if (key == 'e') {
@@ -114,6 +121,7 @@ public class GameFrame extends JFrame implements Runnable, KeyListener {
 				Score -= 3;
 				System.out.println("Score = " + Score);
 				this.setTitle("Score = " + Score);
+				sound1.play();
 			}
 		}
 		else if (key == 'r') {
@@ -138,6 +146,7 @@ public class GameFrame extends JFrame implements Runnable, KeyListener {
 				Score -= 3;
 				System.out.println("Score = " + Score);
 				this.setTitle("Score = " + Score);
+				sound1.play();
 			}		
 		}
 		
@@ -146,7 +155,7 @@ public class GameFrame extends JFrame implements Runnable, KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-
+		 
 	}
 
 	@Override
