@@ -109,7 +109,7 @@ public class Buttons {
 					"Yellow Button.jpg"));
 			image4 = ImageIO.read(this.getClass()
 					.getResource("Blue Button.jpg"));
-			
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

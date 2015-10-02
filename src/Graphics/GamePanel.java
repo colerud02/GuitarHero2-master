@@ -28,13 +28,13 @@ public class GamePanel extends JPanel {
 	double yellowy = 200;
 	double bluex = 500;
 	double bluey = 200;
+
 	public GamePanel(Game g) throws IOException {
 		super();
 		this.g = g;
 		this.setLayout(null);
 		this.setSize(1000, 1000);
 		image = ImageIO.read(getClass().getResource("gh3.lor.07.lg.jpg"));
-		
 
 	}
 
@@ -55,8 +55,7 @@ public class GamePanel extends JPanel {
 		bluex += .2;
 		g2.drawImage(image, 0, 0, 1000, 500, null);
 		ArrayList<Buttons> temp = g.getButtons();
-		for(int i = 0; i < temp.size(); i++)
-		{
+		for (int i = 0; i < temp.size(); i++) {
 			temp.get(i).draw(g2);
 		}
 
@@ -66,6 +65,5 @@ public class GamePanel extends JPanel {
 
 		return greeny;
 	}
-
 
 }

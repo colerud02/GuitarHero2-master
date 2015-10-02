@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.Timer;
 
@@ -17,6 +18,10 @@ public class Game implements Runnable, ActionListener {
 	Boolean yellowUsed = false;
 	Boolean blueUsed = false;
 	Timer time = new Timer(1000, this);
+	int max = 4;
+	int min = 1;
+	int n = 0;
+	Random rand = new Random();
 	private ArrayList<Buttons> buttonslist = new ArrayList<Buttons>();
 
 	public Game() {
@@ -33,32 +38,43 @@ public class Game implements Runnable, ActionListener {
 
 	public void run() {
 		time.start();
+		
 		while (true) {
-			if (timeCount == 1 && greenUsed == false) {
+		
+			
+			//int n1 = rand.nextInt(4);
+			//int n2 = rand.nextInt(4);
+			//int n3 = rand.nextInt(4);
+			if (n == 0 && greenUsed == false) {
 				buttonslist.add(new Buttons(Buttons.GREEN));
 				greenUsed = true;
 				blueUsed = false;
 			}
-			if (timeCount == 2 && redUsed == false) {
+			if (n == 1 && redUsed == false) {
 				greenUsed = false;
 				buttonslist.add(new Buttons(Buttons.RED));
 				redUsed = true;
 			}
-			if (timeCount == 3 && yellowUsed == false) {
+			if (n ==2 && yellowUsed == false) {
 				redUsed = false;
 				buttonslist.add(new Buttons(Buttons.YELLOW));
 				yellowUsed = true;
 			}
-			if (timeCount == 4 && blueUsed == false) {
+			if (n == 3 && blueUsed == false) {
 				yellowUsed = false;
 				buttonslist.add(new Buttons(Buttons.BLUE));
-				timeCount = 0;
+				
 				blueUsed = true;
+				
+			}
+			if (timeCount == 4 ) {
+				timeCount = 0;
 			}
 			x++;
 			y++;
 			for (int i = 0; i < buttonslist.size(); i++) {
 				buttonslist.get(i).tick();
+				
 			}
 			clearButtons();
 			try {
@@ -75,21 +91,20 @@ public class Game implements Runnable, ActionListener {
 	}
 
 	public void clearButtons() {
-		for(int i=buttonslist.size()-1; i>=0; i--)
-		{
+		for (int i = buttonslist.size() - 1; i >= 0; i--) {
 			Buttons removed = buttonslist.get(i);
-			if (removed.getY()>550) {
+			if (removed.getY() > 550) {
 				buttonslist.remove(i);
 			}
 		}
-		
+
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		timeCount++;
-
+		n = rand.nextInt(4);
 	}
 
 }

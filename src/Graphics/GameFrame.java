@@ -11,11 +11,13 @@ import javax.swing.JFrame;
 
 import Game.Game;
 
-public class GameFrame extends JFrame implements Runnable, KeyListener  {
+public class GameFrame extends JFrame implements Runnable, KeyListener {
 	Game g;
 	GamePanel gp;
 	int Score = 0;
-	AudioClip sound1 = JApplet.newAudioClip(getClass().getResource("16604__phylum-sinter__various-buzz-killer.wav"));
+	AudioClip sound1 = JApplet.newAudioClip(getClass().getResource(
+			"16604__phylum-sinter__various-buzz-killer.wav"));
+
 	public GameFrame(Game g) {
 		super();
 		this.g = g;
@@ -40,16 +42,14 @@ public class GameFrame extends JFrame implements Runnable, KeyListener  {
 			gp.repaint();
 		}
 	}
-	
 
 	@Override
 	public void keyTyped(KeyEvent event) {
 		// TODO Auto-generated method stub
 
 		char key = event.getKeyChar();
-	
 
-		if (key == 'q' ) {
+		if (key == 'q') {
 			ArrayList<Buttons> q = g.getButtons();
 			boolean check = false;
 			for (Buttons green : q) {
@@ -73,8 +73,7 @@ public class GameFrame extends JFrame implements Runnable, KeyListener  {
 				this.setTitle("Score = " + Score);
 				sound1.play();
 			}
-		}
-		else if (key == 'w') {
+		} else if (key == 'w') {
 			ArrayList<Buttons> w = g.getButtons();
 			boolean check = false;
 			for (Buttons red : w) {
@@ -98,8 +97,7 @@ public class GameFrame extends JFrame implements Runnable, KeyListener  {
 				this.setTitle("Score = " + Score);
 				sound1.play();
 			}
-		}
-		else if (key == 'e') {
+		} else if (key == 'e') {
 			ArrayList<Buttons> e = g.getButtons();
 			boolean check = false;
 			for (Buttons yellow : e) {
@@ -123,8 +121,7 @@ public class GameFrame extends JFrame implements Runnable, KeyListener  {
 				this.setTitle("Score = " + Score);
 				sound1.play();
 			}
-		}
-		else if (key == 'r') {
+		} else if (key == 'r') {
 			ArrayList<Buttons> r = g.getButtons();
 			boolean check = false;
 			for (Buttons blue : r) {
@@ -147,15 +144,15 @@ public class GameFrame extends JFrame implements Runnable, KeyListener  {
 				System.out.println("Score = " + Score);
 				this.setTitle("Score = " + Score);
 				sound1.play();
-			}		
+			}
 		}
-		
+
 	}
 
 	@Override
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
-		 
+
 	}
 
 	@Override
