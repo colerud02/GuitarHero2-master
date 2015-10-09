@@ -43,22 +43,22 @@ public class Game implements Runnable, ActionListener {
 			time.start();
 			
 			
-			if (n == 3 && greenUsed == false) {
+			if (n == 0 && greenUsed == false) {
 				buttonslist.add(new Buttons(Buttons.GREEN));
 				greenUsed = true;
 				blueUsed = false;
 			}
-			if (n == 2 && redUsed == false) {
+			if (n == 3 && redUsed == false) {
 				greenUsed = false;
 				buttonslist.add(new Buttons(Buttons.RED));
 				redUsed = true;
 			}
-			if (n ==0 && yellowUsed == false) {
+			if (n ==2 && yellowUsed == false) {
 				redUsed = false;
 				buttonslist.add(new Buttons(Buttons.YELLOW));
 				yellowUsed = true;
 			}
-			if (n == 0 && blueUsed == false) {
+			if (n == 1 && blueUsed == false) {
 				yellowUsed = false;
 				buttonslist.add(new Buttons(Buttons.BLUE));
 				
