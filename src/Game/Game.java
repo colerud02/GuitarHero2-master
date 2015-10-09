@@ -17,7 +17,7 @@ public class Game implements Runnable, ActionListener {
 	Boolean redUsed = false;
 	Boolean yellowUsed = false;
 	Boolean blueUsed = false;
-	Timer time = new Timer(1000, this);
+	Timer time = new Timer(500, this);
 	int max = 4;
 	int min = 1;
 	int n = 0;
@@ -37,14 +37,12 @@ public class Game implements Runnable, ActionListener {
 	}
 
 	public void run() {
-		time.start();
+		
 		
 		while (true) {
-		
+			time.start();
 			
-			//int n1 = rand.nextInt(4);
-			//int n2 = rand.nextInt(4);
-			//int n3 = rand.nextInt(4);
+			
 			if (n == 0 && greenUsed == false) {
 				buttonslist.add(new Buttons(Buttons.GREEN));
 				greenUsed = true;
