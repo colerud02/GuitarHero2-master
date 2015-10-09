@@ -17,10 +17,10 @@ public class Game implements Runnable, ActionListener {
 	Boolean redUsed = false;
 	Boolean yellowUsed = false;
 	Boolean blueUsed = false;
-	Timer time = new Timer(500, this);
-	int max = 4;
-	int min = 1;
+	Timer time = new Timer(250, this);
 	int n = 0;
+	int min = 0;
+	int max = 4;
 	Random rand = new Random();
 	private ArrayList<Buttons> buttonslist = new ArrayList<Buttons>();
 
@@ -43,22 +43,22 @@ public class Game implements Runnable, ActionListener {
 			time.start();
 			
 			
-			if (n == 0 && greenUsed == false) {
+			if (n == 3 && greenUsed == false) {
 				buttonslist.add(new Buttons(Buttons.GREEN));
 				greenUsed = true;
 				blueUsed = false;
 			}
-			if (n == 1 && redUsed == false) {
+			if (n == 2 && redUsed == false) {
 				greenUsed = false;
 				buttonslist.add(new Buttons(Buttons.RED));
 				redUsed = true;
 			}
-			if (n ==2 && yellowUsed == false) {
+			if (n ==0 && yellowUsed == false) {
 				redUsed = false;
 				buttonslist.add(new Buttons(Buttons.YELLOW));
 				yellowUsed = true;
 			}
-			if (n == 3 && blueUsed == false) {
+			if (n == 0 && blueUsed == false) {
 				yellowUsed = false;
 				buttonslist.add(new Buttons(Buttons.BLUE));
 				
@@ -101,6 +101,7 @@ public class Game implements Runnable, ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		
 		timeCount++;
 		n = rand.nextInt(4);
 	}
