@@ -17,8 +17,6 @@ public class Main {
 	Game g;
 	AudioClip sound = JApplet.newAudioClip(getClass().getResource(
 			"Foo_Fighters_-_The_Pretender.wav"));
-	//AudioClip sound13 = JApplet.newAudioClip(getClass().getResource(
-		//	"Royal_Blood_-_Little_Monster_(Official_Video).wav"));
 	public static void main(String[] args) {
 		Buttons b = new Buttons(Buttons.BLUE);
 		b.loadUp();
