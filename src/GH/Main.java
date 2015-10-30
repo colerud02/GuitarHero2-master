@@ -44,7 +44,7 @@ public class Main {
 				.showMessageDialog(
 						null,
 						"HI!!! Thanks for playing my game. If you have already played Guitar Hero than you should catch on quick."
-								+ "\nq=green, w=red, e=yellow, r=blue. No need to strum though. The score is displayed at the top of the screen!"
+								+ "\nq=green, w=red, e=yellow, r=blue. No need to strum though. The score is displayed at the top of the screen(High score:1020)!"
 								+ "\n                                                          Thanks for playing!");
 		
 		g = new Game();

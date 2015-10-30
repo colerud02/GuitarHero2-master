@@ -43,17 +43,21 @@ public class Game implements Runnable, ActionListener {
 			time.start();
 			
 			
-			if (n == 0 && greenUsed == false) {
+		
+			
+			if (n == 0  && greenUsed == false) {
 				buttonslist.add(new Buttons(Buttons.GREEN));
 				greenUsed = true;
 				blueUsed = false;
 			}
-			if (n == 3 && redUsed == false) {
+		
+			if (n == 2  && redUsed == false) {
 				greenUsed = false;
 				buttonslist.add(new Buttons(Buttons.RED));
 				redUsed = true;
 			}
-			if (n ==2 && yellowUsed == false) {
+			
+			if (n ==3 && yellowUsed == false) {
 				redUsed = false;
 				buttonslist.add(new Buttons(Buttons.YELLOW));
 				yellowUsed = true;
@@ -103,7 +107,7 @@ public class Game implements Runnable, ActionListener {
 		// TODO Auto-generated method stub
 		
 		timeCount++;
-		n = rand.nextInt(4);
+		n = rand.nextInt(8);
 	}
 
 }

@@ -102,13 +102,13 @@ public class Buttons {
 	public void loadUp() {
 		try {
 			image1 = ImageIO.read(this.getClass().getResource(
-					"Green Button.jpg"));
+					"GreenButton.jpg"));
 			image2 = ImageIO
-					.read(this.getClass().getResource("Red Button.jpg"));
+					.read(this.getClass().getResource("redButton.jpg"));
 			image3 = ImageIO.read(this.getClass().getResource(
-					"Yellow Button.jpg"));
+					"YellowButton.jpg"));
 			image4 = ImageIO.read(this.getClass()
-					.getResource("Blue Button.jpg"));
+					.getResource("Bluebutton.jpg"));
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
